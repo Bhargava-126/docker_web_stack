@@ -1,0 +1,30 @@
+# Deploy with: docker stack deploy -c compose.yml appstack
+# Replace YOUR_DOCKERHUB_USER with your Docker Hub username (e.g. umesh2425).
+version: "3.8"
+
+services:
+  application:
+    image: YOUR_DOCKERHUB_USER/appstack:app
+    ports:
+      - "1111:8080"
+    environment:
+      DB_HOST: devopsdb        # must match the DB service name below
+      DB_NAME: appdb
+      DB_USER: appuser
+      DB_PASSWORD: apppass
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+
+  devopsdb:
+    image: YOUR_DOCKERHUB_USER/appstack:db
+    volumes:
+      - dbdata:/var/lib/mysql
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+volumes:
+  dbdata:

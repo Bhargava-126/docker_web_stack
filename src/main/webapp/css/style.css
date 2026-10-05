@@ -1,0 +1,30 @@
+:root {
+  --bg: #e9ecef; --card: #ffffff; --ink: #1f2933; --muted: #6b7785;
+  --brand: #17384d; --accent: #d62828; --ok: #1b7f4b; --line: #c9d1d9;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+.topbar { display: flex; justify-content: space-between; align-items: center; background: var(--brand); color: #fff; padding: 12px 24px; }
+.brand { font-weight: 700; letter-spacing: 1px; }
+.brand small { display: block; font-size: 10px; font-weight: 400; opacity: .7; letter-spacing: 0; }
+.topbar nav a, .topbar button.link { color: #fff; text-decoration: none; margin-left: 18px; font-size: 14px; font-weight: 600; background: none; border: 0; cursor: pointer; padding: 0; font-family: inherit; }
+.card { max-width: 380px; margin: 56px auto; background: var(--card); padding: 28px; border: 1px solid var(--line); border-radius: 6px; }
+.card.wide { max-width: 640px; }
+h1 { margin: 0 0 16px; font-size: 22px; }
+label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+input { display: block; width: 100%; margin-top: 6px; padding: 10px 12px; font-size: 15px; border: 1px solid var(--line); border-radius: 4px; background: #eafaf5; }
+input:focus { outline: 2px solid #5aa9e6; }
+input.invalid { border-color: var(--accent); background: #fdecec; }
+.card button[type=submit] { width: 100%; padding: 11px; font-size: 15px; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 4px; cursor: pointer; }
+.card button[type=submit]:hover { filter: brightness(.92); }
+.inline { display: inline; margin: 0; }
+.alert { padding: 10px 12px; border-radius: 4px; font-size: 14px; margin-bottom: 14px; }
+.alert[hidden] { display: none; }
+.alert.error { background: #fdecec; color: #8f1d1d; border: 1px solid #f3b4b4; }
+.alert.ok { background: #e7f6ee; color: var(--ok); border: 1px solid #b6e2c8; }
+.muted { color: var(--muted); font-size: 14px; text-align: center; margin-top: 18px; }
+a { color: #1a5fa8; }
+.topbar a { color: #fff; }
+.stats { list-style: none; padding: 0; margin: 20px 0; display: grid; gap: 10px; }
+.stats li { display: flex; justify-content: space-between; padding: 12px 14px; background: #f4f6f8; border-radius: 4px; }
+.stats span { color: var(--muted); }
